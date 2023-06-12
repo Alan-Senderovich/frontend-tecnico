@@ -1,4 +1,6 @@
 # TaskMaster de TODOS
+-Live Demo: https://alan-senderovich.github.io/frontend-tecnico/
+-Github code: https://github.com/Alan-Senderovich/frontend-tecnico
 
 Esta es una aplicación de TaskMaster de TODOS desarrollada como parte de un desafío técnico. La aplicación permite administrar y realizar un seguimiento de las tareas pendientes.
 
