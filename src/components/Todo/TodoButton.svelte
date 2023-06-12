@@ -5,9 +5,12 @@
   export let toggleComplete;
   export let removeTodo;
   export let status;
+
+  // Importing required constants
+  import { COMPLETED, CHECK } from "../../constants/index.js";
 </script>
 
-{#if type === "check" && typeof toggleComplete === "function"}
+{#if type === CHECK && typeof toggleComplete === "function"}
   <!-- Check button for marking a todo as complete -->
   <button on:click={() => toggleComplete(index)} class="btn check">
     <span>✓</span>
@@ -15,7 +18,7 @@
 {:else}
   <!-- Delete button for removing a todo -->
   <button on:click={() => removeTodo(index)} class="btn delete">
-    {#if status === "completed"}
+    {#if status === COMPLETED}
       <!-- Strike-through the delete button if todo is completed -->
       <del>X</del>
     {:else}

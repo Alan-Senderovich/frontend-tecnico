@@ -10,13 +10,15 @@
     <button>
       <img
         src="https://cdn2.iconfinder.com/data/icons/membership-account-outline/200/coder-512.png"
-        width="20px"
+        width="24px"
         alt="user-icon"
       />
     </button>
     <div class="btn-right">
       <button>
-        <Icon src={HiOutlineChevronLeft} size="20" />
+        <div class="icon-container">
+          <Icon src={HiOutlineChevronLeft} color="red" size="24" className="custom-icon" title="Custom icon params" />
+        </div>
       </button>
     </div>
   </div>
@@ -28,7 +30,7 @@
     width: 100%;
     overflow-x: hidden;
     background-color: #1f2937;
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 3.5rem;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -50,13 +52,17 @@
   /* Button styles */
   .navbar button {
     border-radius: 50%;
-    padding: 5px 7px 2px;
+    padding: 2px 4px 0px 2px;
     background-color: #374151;
     color: white;
   }
 
   /* Right-aligned button styles */
   .btn-right {
+    color: white;
+  }
+
+  .icon-container {
     color: white;
   }
 

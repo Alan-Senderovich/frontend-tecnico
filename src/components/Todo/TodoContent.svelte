@@ -3,6 +3,7 @@
   export let status; // Status of the todo ("completed" or "pending")
   export let title; // Title of the todo
   
+  // Importing required constants
   import { COMPLETED } from "../../constants/index.js";
 </script>
 

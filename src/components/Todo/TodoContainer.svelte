@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
+  // Importing required database methods
   import {
     getTodos,
     createTodo,
@@ -8,10 +9,18 @@
     deleteTodo,
   } from "../../api/supabase";
 
-  import TodoBtn from "./TodoBtn.svelte";
-  import TodoContent from "./TodoContent.svelte";
+  // Importing required constants
+  import {
+    COMPLETED,
+    PENDING,
+    INPUT_PLACEHOLDER,
+    FAILED_TO_FETCH_QUOTE,
+    REMOVE,
+  } from "../../constants/index.js";
 
-  import { COMPLETED, PENDING, INPUT_PLACEHOLDER } from "../../constants/index.js";
+  // Importing required components and icons
+  import TodoButton from "./TodoButton.svelte";
+  import TodoContent from "./TodoContent.svelte";
 
   let todos = [];
   let todosQuantity;
@@ -75,10 +84,10 @@
         quote = content;
         author = newAuthor;
       } else {
-        quote = "Failed to fetch quote";
+        quote = FAILED_TO_FETCH_QUOTE;
       }
     } catch (error) {
-      quote = "Failed to fetch quote";
+      quote = FAILED_TO_FETCH_QUOTE;
       console.error("Error fetching quote:", error);
     }
   }
@@ -106,7 +115,7 @@
         <TodoContent status={todo.status} title={todo.title} />
         <div>
           {#if todo.status === PENDING}
-            <TodoBtn
+            <TodoButton
               type="check"
               status={todo.status}
               {index}
@@ -115,8 +124,8 @@
             />
           {/if}
 
-          <TodoBtn
-            type="remove"
+          <TodoButton
+            type={REMOVE}
             status={todo.status}
             {index}
             {removeTodo}

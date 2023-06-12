@@ -3,6 +3,7 @@
   import Icon from "svelte-icons-pack/Icon.svelte";
   import BsGithub from "svelte-icons-pack/bs/BsGithub";
 
+  // Importing required constants
   import {
     FOOTER_COPYRIGHT,
     FOOTER_TEXT,
